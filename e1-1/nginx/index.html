@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1a1a2e;
+      border: 1px solid #4f46e5;
+      color: #818cf8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 30%, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #9ca3af;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover { background: #4338ca; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: #d1d5db;
+      border: 1px solid #374151;
+    }
+
+    .btn-secondary:hover { border-color: #6b7280; color: #fff; }
+
+    .cards {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 2rem;
+    }
+
+    .card {
+      background: #141414;
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 1.75rem;
+      width: 220px;
+      text-align: left;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: #4f46e5; }
+
+    .card-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #f9fafb;
+    }
+
+    .card p {
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 5rem;
+      padding: 2rem;
+      color: #374151;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <span class="badge">Demo</span>
+    <h1>Hello, World.</h1>
+    <p>Nginx가 잘 돌고 있습니다. 이 페이지는 데모용입니다.</p>
+    <div class="actions">
+      <a href="#" class="btn btn-primary">시작하기</a>
+      <a href="#" class="btn btn-secondary">더 알아보기</a>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>빠른 속도</h3>
+      <p>Nginx 기반의 고성능 정적 파일 서빙</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>안전한 연결</h3>
+      <p>보안 설정이 적용된 안정적인 환경</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛠</div>
+      <h3>쉬운 설정</h3>
+      <p>간단한 설정으로 바로 시작 가능</p>
+    </div>
+  </div>
+
+  <footer>codyssey-academy · e1-1</footer>
+
+</body>
+</html>
