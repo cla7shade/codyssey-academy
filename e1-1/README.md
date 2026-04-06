@@ -2,6 +2,9 @@
 
 개발 환경을 구축하고 개발 및 배포 환경에 대한 기초를 익힌다.
 
+- 체크리스트: [CHECKLISTS.md](CHECKLISTS.md)
+- 작업 로그: [LOGS.md](LOGS.md)
+
 # 실행 환경
 
 - Docker version 28.5.2, build ecc6942
