@@ -422,8 +422,6 @@ docker run --rm -p 8080:80 -v ./volume:/var/log/nginx --name myapp myapp:latest
 /docker-entrypoint.sh: Configuration complete; ready for start up
 ```
 
-![Screenshot-demo.png](./screenshot-demo.png)
-
 커스텀 포인트
 
 - nginx/ 하위의 데모 페이지를 사용하도록 수정
