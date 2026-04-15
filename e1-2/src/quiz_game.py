@@ -15,7 +15,7 @@ class QuizGame:
                 elif choice == 2:
                     self._add_quiz()
                 elif choice == 3:
-                    pass  # 퀴즈 목록
+                    self._list_quizzes()
                 elif choice == 4:
                     pass  # 점수 확인
                 elif choice == 5:
@@ -100,3 +100,13 @@ class QuizGame:
         answer = self._input_int('정답 번호 (1~4): ', 1, 4)
         self.state.add_quiz(question, choices, answer)
         print('퀴즈가 추가되었습니다.')
+
+    def _list_quizzes(self):
+        quizzes = self.state.quizzes
+        if not quizzes:
+            print('등록된 퀴즈가 없습니다.')
+            return
+
+        print(f'\n-- 퀴즈 목록 ({len(quizzes)}개) --')
+        for i, quiz in enumerate(quizzes, 1):
+            print(f'{i}. {quiz.question}')
