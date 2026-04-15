@@ -13,7 +13,7 @@ class QuizGame:
                 if choice == 1:
                     self._play_quiz()
                 elif choice == 2:
-                    pass  # 퀴즈 추가
+                    self._add_quiz()
                 elif choice == 3:
                     pass  # 퀴즈 목록
                 elif choice == 4:
@@ -80,3 +80,23 @@ class QuizGame:
         if score > self.state.best_score:
             self.state.best_score = score
             print('최고 점수를 갱신했습니다!')
+
+    def _add_quiz(self):
+        print('\n-- 퀴즈 추가 --')
+        question = input('문제: ').strip()
+        if not question:
+            print('문제를 입력해주세요.')
+            return
+
+        choices = []
+        for i in range(1, 5):
+            while True:
+                choice = input(f'선택지 {i}: ').strip()
+                if choice:
+                    choices.append(choice)
+                    break
+                print('선택지를 입력해주세요.')
+
+        answer = self._input_int('정답 번호 (1~4): ', 1, 4)
+        self.state.add_quiz(question, choices, answer)
+        print('퀴즈가 추가되었습니다.')
