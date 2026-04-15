@@ -17,7 +17,7 @@ class QuizGame:
                 elif choice == 3:
                     self._list_quizzes()
                 elif choice == 4:
-                    pass  # 점수 확인
+                    self._show_score()
                 elif choice == 5:
                     self.state.save_state()
                     print('저장 후 종료합니다.')
@@ -110,3 +110,10 @@ class QuizGame:
         print(f'\n-- 퀴즈 목록 ({len(quizzes)}개) --')
         for i, quiz in enumerate(quizzes, 1):
             print(f'{i}. {quiz.question}')
+
+    def _show_score(self):
+        score = self.state.get_best_score()
+        if score == -1:
+            print('아직 퀴즈를 풀지 않았습니다.')
+            return
+        print(f'최고 점수: {score}점')
