@@ -29,6 +29,9 @@ class QuizState:
             print("저장 파일이 손상되었습니다. 기본 데이터로 초기화합니다.")
             self._init_defaults()
 
+    def get_best_score(self) -> int:
+        return self.best_score
+
     def add_quiz(self, question: str, choices: list[str], answer: int):
         self.quizzes.append(Quiz(question, choices, answer))
 
