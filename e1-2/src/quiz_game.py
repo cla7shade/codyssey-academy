@@ -9,9 +9,9 @@ class QuizGame:
         try:
             while True:
                 self._print_menu()
-                choice = self._input_menu()
+                choice = self._input_int('선택: ', 1, 5)
                 if choice == 1:
-                    pass  # 퀴즈 풀기
+                    self._play_quiz()
                 elif choice == 2:
                     pass  # 퀴즈 추가
                 elif choice == 3:
@@ -38,9 +38,9 @@ class QuizGame:
         print('5. 종료')
         print('========================================')
 
-    def _input_menu(self) -> int:
+    def _input_int(self, prompt: str, min_val: int, max_val: int) -> int:
         while True:
-            raw = input('선택: ').strip()
+            raw = input(prompt).strip()
             if not raw:
                 print('입력값이 없습니다. 다시 입력해주세요.')
                 continue
@@ -49,7 +49,34 @@ class QuizGame:
             except ValueError:
                 print('숫자를 입력해주세요.')
                 continue
-            if not (1 <= value <= 5):
-                print('1~5 사이의 숫자를 입력해주세요.')
+            if not (min_val <= value <= max_val):
+                print(f'{min_val}~{max_val} 사이의 숫자를 입력해주세요.')
                 continue
             return value
+
+    def _play_quiz(self):
+        quizzes = self.state.quizzes
+        if not quizzes:
+            print('등록된 퀴즈가 없습니다.')
+            return
+
+        print(f'\n퀴즈를 시작합니다! (총 {len(quizzes)}문제)')
+
+        correct = 0
+        for i, quiz in enumerate(quizzes, 1):
+            print(f'\nQ{i}. {quiz.question}')
+            for j, choice in enumerate(quiz.choices, 1):
+                print(f'  {j}. {choice}')
+            answer = self._input_int('정답: ', 1, len(quiz.choices))
+            if quiz.is_answer(answer):
+                print('정답입니다!')
+                correct += 1
+                continue
+            print(f'오답입니다. 정답은 {quiz.answer}번입니다.')
+
+        score = round(correct / len(quizzes) * 100)
+        print(f'\n결과: {len(quizzes)}문제 중 {correct}개 정답 ({score}점)')
+
+        if score > self.state.best_score:
+            self.state.best_score = score
+            print('최고 점수를 갱신했습니다!')
