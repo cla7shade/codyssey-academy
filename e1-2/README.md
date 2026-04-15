@@ -279,3 +279,4 @@ git commit -m "init"
 git remote add origin https://github.com/유저명/저장소명.git  # origin은 원격 저장소에 붙이는 별칭
 git push -u origin main  # -u로 upstream 설정
 ```
+<!-- clone/pull 실습 -->
