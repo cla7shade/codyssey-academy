@@ -27,6 +27,24 @@ python src/main.py
 | 점수 확인 | 퀴즈 풀기를 통해 기록된 최고 점수를 확인한다. |
 | 종료 | 현재 상태를 `state.json`에 저장하고 프로그램을 종료한다. |
 
+## 스크린샷
+
+**메뉴**
+
+![메뉴](screenshots/menu.png)
+
+**퀴즈 풀기**
+
+![퀴즈 풀기](screenshots/play.png)
+
+**퀴즈 추가**
+
+![퀴즈 추가](screenshots/add_quiz.png)
+
+**점수 확인**
+
+![점수 확인](screenshots/score.png)
+
 # 파일 구조
 
 ```
