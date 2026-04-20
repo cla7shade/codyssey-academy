@@ -4,8 +4,8 @@ from quiz import Quiz
 
 
 DEFAULT_QUIZZES = [
-    Quiz("Python에서 리스트를 복사할 때 얕은 복사가 되는 방법은?",
-         ["a = b", "a = b.copy()", "a = b[:]", "a = list(b)"], 1),
+    Quiz("Python에서 리스트 b에 대해 새로운 리스트 객체를 생성하지 않는 방식은?",
+        ["a = b", "a = b.copy()", "a = b[:]", "a = list(b)"], 1),
     Quiz("다음 중 immutable 타입이 아닌 것은?",
          ["int", "str", "tuple", "list"], 4),
     Quiz("Git에서 변경사항을 스테이징 영역에 올리는 명령어는?",
