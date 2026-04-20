@@ -45,6 +45,10 @@ python src/main.py
 
 ![점수 확인](screenshots/score.png)
 
+**Git log graph**
+
+![점수 확인](screenshots/graph.png)
+
 # 파일 구조
 
 ```
